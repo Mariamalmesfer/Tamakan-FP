@@ -1,7 +1,8 @@
 package com.example.tamakanfp.Controller;
 import java.io.IOException;
 
-import com.example.tamakanfp.Api.FileUploadResponse;
+
+import com.example.tamakanfp.ApiResponse.FileUploadResponse;
 import com.example.tamakanfp.Model.FileDownloadUtil;
 import com.example.tamakanfp.Service.CertificatesService;
 import lombok.RequiredArgsConstructor;

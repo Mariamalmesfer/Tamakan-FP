@@ -1,7 +1,8 @@
 package com.example.tamakanfp.Controller;
 
 
-import com.example.tamakanfp.Api.ApiResponse;
+
+import com.example.tamakanfp.ApiResponse.ApiResponse;
 import com.example.tamakanfp.Model.Recommendation;
 import com.example.tamakanfp.Service.RecommendationService;
 import jakarta.validation.Valid;
