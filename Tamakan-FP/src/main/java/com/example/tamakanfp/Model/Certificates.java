@@ -1,5 +1,6 @@
 package com.example.tamakanfp.Model;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,9 @@ public class Certificates {
 
     @Column(columnDefinition = "varchar(255)")
     private String status;
+
+
+
 
 // @ManyToOne
 //    @JoinColumn(name = "Seeker_id",referencedColumnName = "id")

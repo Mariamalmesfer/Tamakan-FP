@@ -14,7 +14,6 @@ public class Recommendation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
     @Column(columnDefinition = "varchar(255) ")
     private  String Reccomendations;
 
