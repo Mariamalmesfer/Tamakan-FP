@@ -16,30 +16,28 @@ import java.io.File;
 @NoArgsConstructor
 public class Certificates {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
+
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer id;
+
+
+
+        @ManyToOne
+        @JoinColumn(name = "jobSeekerProfile_id",referencedColumnName = "")
+        private JobSeekerProfile jobSeekerProfile;
+
+
+        @OneToOne
+        @MapsId
+        @JsonIgnore
+        JobApplication jobApplication;
 
 
 
 
+    }
 
-//    @ManyToOne
-//    @JoinColumn(name = "jobSeekerProfile_id",referencedColumnName = "")
-//    private JobSeekerProfile jobSeekerProfile;
 
-// @ManyToOne
-//    @JoinColumn(name = "jobApplication_id",referencedColumnName = "id")
-//    private JobApplication jobApplication;
-
-//    @ManyToOne
-//    @JoinColumn(name = "jobProvider_id",referencedColumnName = "id")
-//    @JsonIgnore
-//    private JobProvider jobProvider ;
-
-//    @OneToOne
-//    @MapsId
-//    @JsonIgnore
-//    JobApplication jobApplication;
-
-}
