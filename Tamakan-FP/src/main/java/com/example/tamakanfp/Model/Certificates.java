@@ -1,5 +1,6 @@
 package com.example.tamakanfp.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -7,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 
 @Data
@@ -24,20 +24,21 @@ public class Certificates {
         private Integer id;
 
 
+    @ManyToOne
+    @JoinColumn(name = "jobSeekerProfile_id",referencedColumnName = "")
+    private JobSeekerProfile jobSeekerProfile;
 
-        @ManyToOne
-        @JoinColumn(name = "jobSeekerProfile_id",referencedColumnName = "")
-        private JobSeekerProfile jobSeekerProfile;
 
-
-        @OneToOne
-        @MapsId
-        @JsonIgnore
-        JobApplication jobApplication;
-
+    @OneToOne
+    @MapsId
+    @JsonIgnore
+    JobApplication jobApplication;
 
 
 
-    }
 
+
+
+
+}
 

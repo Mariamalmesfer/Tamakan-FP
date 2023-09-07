@@ -1,8 +1,7 @@
 package com.example.tamakanfp.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -52,5 +51,10 @@ public class Job {
 
     @Column(columnDefinition = "varchar(7) not null")
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "jobProvider_id ",referencedColumnName = "User_id")
+    @JsonIgnore
+    private JobProvider jobProvider ;
 
 }

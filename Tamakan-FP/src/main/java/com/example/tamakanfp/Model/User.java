@@ -45,6 +45,7 @@ public class User  {
     private String role;
 
     //Relations
+
     @OneToOne(cascade =CascadeType.ALL,mappedBy = "user")
     @PrimaryKeyJoinColumn
     JobSeeker jopSeeker;

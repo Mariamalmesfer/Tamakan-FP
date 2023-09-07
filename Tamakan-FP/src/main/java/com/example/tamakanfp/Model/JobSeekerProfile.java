@@ -1,14 +1,14 @@
 package com.example.tamakanfp.Model;
 
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 
 @AllArgsConstructor
@@ -40,5 +40,18 @@ public class JobSeekerProfile {
     private Integer expectedGraduationYear;
 
     private String resume;
+
+
+    @OneToOne
+    @MapsId
+    @JsonIgnore
+    JobSeeker jobSeeker;
+
+    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "jobSeekerProfile")
+    Set<Certificates> certificates;
+
+
+    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "jobSeekerProfile")
+    Set<Recommendation> Recommendation;
 
 }

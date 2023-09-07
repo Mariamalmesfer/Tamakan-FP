@@ -3,7 +3,7 @@ package com.example.tamakanfp.Service;
 
 import com.example.tamakanfp.ApiResponse.ApiException;
 import com.example.tamakanfp.Model.Recommendation;
-import com.example.tamakanfp.Repositoory.RecommendationRepositoory;
+import com.example.tamakanfp.Repository.RecommendationRepositoory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +13,7 @@ import java.util.List;
 @Service
 public class RecommendationService {
     private final RecommendationRepositoory recommendationRepositoory;
+
 
     public List<Recommendation> getAllRecommend(){
 
@@ -33,7 +34,7 @@ public class RecommendationService {
 //        User user=authRepository.findUserById(user_id);
 //        if (user==null){
 //            throw new ApiException("id is null");
-//        }
+
 
 Recommendation recommendation=recommendationRepositoory.findRecommendationById(id);
 if(recommendation==null) {

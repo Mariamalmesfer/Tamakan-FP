@@ -1,4 +1,4 @@
-package com.example.tamakanfp.Repositoory;
+package com.example.tamakanfp.Repository;
 
 import com.example.tamakanfp.Model.Recommendation;
 import org.springframework.data.jpa.repository.JpaRepository;

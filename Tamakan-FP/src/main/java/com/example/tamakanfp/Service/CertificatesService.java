@@ -1,6 +1,7 @@
 package com.example.tamakanfp.Service;
 
-import com.example.tamakanfp.Repositoory.CertificatesRepository;
+import com.example.tamakanfp.Repository.CertificatesRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;

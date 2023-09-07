@@ -1,7 +1,7 @@
 package com.example.tamakanfp.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,5 +19,21 @@ public class JobApplication {
 
     private String status;
 
+
+    @ManyToOne
+    @JoinColumn(name = "jobSeeker_id" , referencedColumnName = "User_id")
+    @JsonIgnore
+    private JobSeeker jobSeeker;
+
+
+
+    @OneToOne(cascade =CascadeType.ALL,mappedBy = "jobApplication")
+    @PrimaryKeyJoinColumn
+    Certificates certificates;
+
+
+    @OneToOne(cascade =CascadeType.ALL,mappedBy = "jobApplication")
+    @PrimaryKeyJoinColumn
+    Recommendation recommendation;
 
 }

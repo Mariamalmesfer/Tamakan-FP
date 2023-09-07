@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @Entity
@@ -55,5 +57,12 @@ public class JobSeeker {
     User user;
 
 
+    @OneToOne(cascade =CascadeType.ALL,mappedBy = "jobSeeker")
+    @PrimaryKeyJoinColumn
+    JobSeekerProfile jobSeekerProfile;
+
+
+    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "jobSeeker")
+    Set<JobApplication> jobApplicationSet;
 
 }

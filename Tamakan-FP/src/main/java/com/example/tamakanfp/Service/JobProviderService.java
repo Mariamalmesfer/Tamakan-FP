@@ -23,10 +23,20 @@ public class JobProviderService {
         if (user == null) {
             throw new ApiException("id is null");
         }
-        JobProvider jopProvider = new JobProvider(null, jopProviderDTO.getName(), jopProviderDTO.getPhoneNumber(), jopProviderDTO.getCity(), jopProviderDTO.getAddress(), jopProviderDTO.getSector(), jopProviderDTO.getLicense(), jopProviderDTO.getStatus(), user);
+        JobProvider jopProvider = new JobProvider(null, jopProviderDTO.getName(), jopProviderDTO.getPhoneNumber(), jopProviderDTO.getCity(), jopProviderDTO.getAddress(), jopProviderDTO.getSector(), jopProviderDTO.getLicense(), jopProviderDTO.getStatus(), user,null);
         jobProviderRepository.save(jopProvider);
     }
 
+
+    public void VeriftProvider (Integer id){
+        JobProvider jobProvider=jobProviderRepository.findJopProviderById(id);
+        if (jobProvider == null ){
+            throw new ApiException(" jobProvider not found");
+        }
+        jobProvider.setStatus("verify");
+        jobProviderRepository.save(jobProvider);
+
+    }
 
 
 
