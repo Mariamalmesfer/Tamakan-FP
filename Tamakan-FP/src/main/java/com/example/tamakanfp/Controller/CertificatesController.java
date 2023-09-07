@@ -21,7 +21,7 @@ public class CertificatesController {
 
     private final CertificatesService certificatesService;
         @PostMapping("/uploadFile")
-        public ResponseEntity<FileUploadResponse> uploadFile(@RequestParam("file") MultipartFile multipartFile)
+        public ResponseEntity<FileUploadResponse> uploadCertificates(@RequestParam("file") MultipartFile multipartFile)
                 throws IOException {
 
             String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
@@ -37,9 +37,8 @@ public class CertificatesController {
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
 
-
     @GetMapping("/downloadFile/{fileCode}")
-    public ResponseEntity<?> downloadFile(@PathVariable("fileCode") String fileCode) {
+    public ResponseEntity<?> getCertificate(@PathVariable("fileCode") String fileCode) {
         FileDownloadUtil downloadUtil = new FileDownloadUtil();
 
         Resource resource = null;

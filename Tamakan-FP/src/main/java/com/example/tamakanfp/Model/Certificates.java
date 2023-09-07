@@ -2,10 +2,12 @@ package com.example.tamakanfp.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 
@@ -19,12 +21,6 @@ public class Certificates {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(columnDefinition = "varchar(255)")
-    private File Certificates;
-
-    @Column(columnDefinition = "varchar(255)")
-    private String status;
-
 
 
  @ManyToOne
@@ -36,6 +32,8 @@ public class Certificates {
     @MapsId
     @JsonIgnore
     JobApplication jobApplication;
+
+
 
 
 }

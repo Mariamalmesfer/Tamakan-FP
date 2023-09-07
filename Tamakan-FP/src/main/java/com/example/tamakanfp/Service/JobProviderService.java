@@ -17,7 +17,6 @@ public class JobProviderService {
     private final JobProviderRepository jobProviderRepository;
     private final UserRepository userRepository;
 
-
     public void regester(JobProviderDTO jopProviderDTO) {
         User user = userRepository.findUserById(jopProviderDTO.getUser_id());
 
