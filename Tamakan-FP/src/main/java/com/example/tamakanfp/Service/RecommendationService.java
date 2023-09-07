@@ -1,7 +1,7 @@
 package com.example.tamakanfp.Service;
 
 
-import com.example.tamakanfp.Api.ApiException;
+import com.example.tamakanfp.ApiResponse.ApiException;
 import com.example.tamakanfp.Model.Recommendation;
 import com.example.tamakanfp.Repositoory.RecommendationRepositoory;
 import lombok.RequiredArgsConstructor;
