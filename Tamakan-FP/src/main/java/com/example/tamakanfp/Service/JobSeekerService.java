@@ -25,8 +25,17 @@ public class JobSeekerService {
         if (user == null) {
             throw new ApiException("id is null");
         }
-        JobSeeker jobSeeker = new JobSeeker(null, jobSeekerDTO.getName(),jobSeekerDTO.getPhoneNumber(),jobSeekerDTO.getGender(),jobSeekerDTO.getCity(),jobSeekerDTO.getAddress(),jobSeekerDTO.getAge(),user);
+        JobSeeker jobSeeker = new JobSeeker(null, jobSeekerDTO.getName(),jobSeekerDTO.getPhoneNumber(),jobSeekerDTO.getGender(),jobSeekerDTO.getCity(),jobSeekerDTO.getAddress(),jobSeekerDTO.getAge(),user,null,null);
         jobSeekerRepository.save(jobSeeker);
+    }
+
+
+    public JobSeeker getSeekerByName(Integer user_id,String name){
+        JobSeeker jobSeeker = jobSeekerRepository.findJopSeekerById(user_id);
+        if (jobSeeker==null){
+            throw new ApiException("id not found");
+        }
+        return jobSeekerRepository.getJobSeekerByName(name);
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.tamakanfp.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,18 +27,15 @@ public class Certificates {
 
 
 
-
-// @ManyToOne
-//    @JoinColumn(name = "Seeker_id",referencedColumnName = "id")
-//    private JobSeekerProfile jobSeekerProfile;
-
-
-// @ManyToOne
-//    @JoinColumn(name = "jobApplication_id",referencedColumnName = "id")
-//    private JobApplication jobApplication;
+ @ManyToOne
+    @JoinColumn(name = "jobSeekerProfile_id",referencedColumnName = "")
+    private JobSeekerProfile jobSeekerProfile;
 
 
-// @ManyToOne
-//    @JoinColumn(name = "jobProvider_id",referencedColumnName = "id")
-//    private JobProvider jobProvider ;
+    @OneToOne
+    @MapsId
+    @JsonIgnore
+    JobApplication jobApplication;
+
+
 }

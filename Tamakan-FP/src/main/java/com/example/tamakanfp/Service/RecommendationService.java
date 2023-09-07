@@ -1,9 +1,10 @@
 package com.example.tamakanfp.Service;
 
 
-import com.example.tamakanfp.Api.ApiException;
+
+import com.example.tamakanfp.ApiResponse.ApiException;
 import com.example.tamakanfp.Model.Recommendation;
-import com.example.tamakanfp.Repositoory.RecommendationRepositoory;
+import com.example.tamakanfp.Repository.RecommendationRepositoory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

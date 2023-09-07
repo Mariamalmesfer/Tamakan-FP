@@ -1,5 +1,6 @@
 package com.example.tamakanfp.Service;
 
+import com.example.tamakanfp.Repository.CertificatesRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,10 @@ import java.nio.file.StandardCopyOption;
 @Service
 @RequiredArgsConstructor
 public class CertificatesService {
+
+
+    private  final CertificatesRepository certificatesRepository;
+
     public static String saveFile(String fileName, MultipartFile multipartFile)
             throws IOException {
         Path uploadPath = Paths.get("Files-Upload");
@@ -27,6 +32,7 @@ public class CertificatesService {
         try (InputStream inputStream = multipartFile.getInputStream()) {
             Path filePath = uploadPath.resolve(fileCode + "-" + fileName);
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+            String m = multipartFile.toString();
         } catch (IOException ioe) {
             throw new IOException("Could not save file: " + fileName, ioe);
         }

@@ -1,5 +1,6 @@
 package com.example.tamakanfp.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,15 +19,23 @@ public class Recommendation {
     private  String Reccomendations;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "Seeker_id",referencedColumnName = "id")
-//    private JobSeekerProfile jobSeekerProfile;
 
-// @ManyToOne
+//    @ManyToOne
 //    @JoinColumn(name = "jobProvider_id",referencedColumnName = "id")
+//    @JsonIgnore
 //    private JobProvider jobProvider ;
 
 
+    @ManyToOne
+    @JoinColumn(name = "jobSeekerProfile_id" , referencedColumnName = "")
+    @JsonIgnore
+    private JobSeekerProfile jobSeekerProfile;
+
+
+    @OneToOne
+    @MapsId
+    @JsonIgnore
+    JobApplication jobApplication;
 
 
 }

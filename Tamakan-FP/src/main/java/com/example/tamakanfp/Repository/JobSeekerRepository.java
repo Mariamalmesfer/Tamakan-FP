@@ -10,4 +10,6 @@ public interface JobSeekerRepository extends JpaRepository<JobSeeker,Integer> {
 
     JobSeeker findJopSeekerById(Integer id);
 
+    JobSeeker getJobSeekerByName (String name);
+
 }

@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Set;
 
 
 @Data
@@ -43,7 +44,7 @@ public class JobProvider {
     private String license;
 
     @Pattern(regexp = "^(verify|pending)$" , message = "Pleases enter verify or pending")
-    private String Status;
+    private String Status ="pending";
 
 
 
@@ -51,6 +52,15 @@ public class JobProvider {
     @MapsId
     @JsonIgnore
     User user;
+
+    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "jobProvider")
+    Set<Job> jobs;
+
+//    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "jobSeeker")
+//    Set<Certificates> certificates;
+//
+//    @OneToMany(cascade = CascadeType.ALL ,mappedBy = "jobSeeker")
+//    Set<Recommendation> recommendations;
 
 
 
